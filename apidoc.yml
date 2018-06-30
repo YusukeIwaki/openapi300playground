@@ -1,0 +1,48 @@
+openapi: "3.0.0"
+info:
+  description: API
+  version: 1.0.0
+  title: API
+servers:
+  - url: "http://localhost:3000/api"
+    description: "Local development server"
+tags:
+  - name: user
+paths:
+  /user/login:
+    post:
+      tags:
+        - user
+      summary: ログイン
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                token:
+                  type: string
+              required:
+                - token
+      responses:
+        200:
+          description: ログイン成功。
+        401:
+          description: 認証失敗
+  /user:
+    get:
+      tags:
+        - user
+      summary: ログイン中のユーザ情報
+      responses:
+        200:
+          description: 成功
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
