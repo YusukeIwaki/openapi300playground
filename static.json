@@ -1,0 +1,6 @@
+{
+  "root": "dist/",
+  "routes": {
+    "/swagger.yml": "../apidoc.yml"
+  }
+}
